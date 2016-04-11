@@ -100,18 +100,16 @@ controller.busca = function(req, res, next) {
       if (!data) {
         res.status(401).json({ mensagem: 'Não autorizado' });
       } else {
-        jwt.verify(data.token, config.get('jwt-secret'), function(err, decoded) {
+        jwt.verify(data.token, config.get('jwt-secret'), function(err) {
           if (err) {
             res.status(403).json({ mensagem: 'Sessão expirada' });
           } else {
-            console.log(decoded);
             res.json(data);
           }
         });
       }
     })
     .catch(next);
-
 };
 
 

@@ -1,0 +1,7 @@
+{
+  "jwt-secret": "teste",
+  "port": 3333,
+  "mongo": {
+    "string_conn": "teste:teste@ds021650.mlab.com:21650/desenv_test"
+  }
+}
