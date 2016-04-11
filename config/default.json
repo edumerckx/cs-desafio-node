@@ -1,0 +1,7 @@
+{
+  "jwt-secret": "cs-desafio-node",
+  "port": 3333,
+  "mongo": {
+    "string_conn": "desenv:desenv@ds047632.mlab.com:47632/desenv"
+  }
+}

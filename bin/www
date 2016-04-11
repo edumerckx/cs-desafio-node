@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+'use strict';
+
+var config = require('config');
+var app = require('../app');
+var port = config.get('port') || 3000;
+
+app.listen(port, function() {
+  console.log('server running in port ' + port);
+});
