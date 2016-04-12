@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "grunt test",
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha test/**/*.js",
     "facadeTest": "set %NODE_ENV% = test && mocha facadeTest",
     "start": "nodemon bin/www",
     "build": "grunt build"
