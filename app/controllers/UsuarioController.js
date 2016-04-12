@@ -7,6 +7,7 @@ var config = require('config');
 var jwt = require('jsonwebtoken');
 var sha1 = require('sha-1');
 var md5 = require('md5');
+var messages = require('../../strings/messages.json');
 var model = require('../models/UsuarioModel');
 model = Promise.promisifyAll(model);
 
@@ -17,7 +18,7 @@ controller.jaCadastrado = function(req, res, next) {
   model.emailJaCadastradoAsync(req.body.email)
     .then(function(data) {
       if (data) {
-        res.status(422).json({ 'mensagem': 'E-mail já existente' });
+        res.status(422).json({ mensagem: messages.email_existente });
       } else {
         next();
       }
@@ -85,7 +86,7 @@ controller.autentica = function(req, res, next) {
           })
           .catch(next);
       } else {
-        res.status(401).json({ mensagem: 'Usuário e/ou senha inválidos' });
+        res.status(401).json({ mensagem: messages.login_invalido });
       }
 
     })
@@ -98,11 +99,11 @@ controller.busca = function(req, res, next) {
     .then(function(data) {
 
       if (!data) {
-        res.status(401).json({ mensagem: 'Não autorizado' });
+        res.status(401).json({ mensagem: messages.nao_autorizado });
       } else {
         jwt.verify(data.token, config.get('jwt-secret'), function(err) {
           if (err) {
-            res.status(403).json({ mensagem: 'Sessão expirada' });
+            res.status(403).json({ mensagem: messages.sessao_expirada });
           } else {
             res.json(data);
           }

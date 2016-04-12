@@ -1,0 +1,10 @@
+{
+  "nome_invalido": "Informe o nome",
+  "email_invalido": "Informe um e-mail válido",
+  "senha_invalida": "Informe uma senha",
+  "telefones_invalido": "Lista de telefones inválida",
+  "nao_autorizado": "Não autorizado",
+  "email_existente": "E-mail já existente",
+  "login_invalido": "Usuário e/ou senha inválidos",
+  "sessao_expirada": "Sessão expirada"
+}

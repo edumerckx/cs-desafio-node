@@ -3,7 +3,7 @@
 var router = require('express').Router();
 var controller = require('../controllers/UsuarioController');
 var validator = require('../validation/UsuarioValidator');
-
+console.log(controller);
 // rota para cadastro de usuário
 router.post('/', validator.novo, controller.jaCadastrado, controller.novo);
 
